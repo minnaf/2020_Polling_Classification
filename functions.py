@@ -34,3 +34,53 @@ def scrape_census():
        'HTOM_FEMALE'], axis =1, inplace = True)
     
     return df_2
+
+
+
+def fips_county(county):
+    if len(str(county)) == 1:
+        county = '00' + str(county)
+    elif len(str(county)) == 2:
+        county = '0' + str(county)
+    else:
+        county = str(county)
+        
+    return county
+
+def fips_state(state):
+    if len(str(state)) == 1: 
+        
+        state = '0' + str(state)
+        
+        return str(state)
+    else:
+        
+        return str(state)
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
