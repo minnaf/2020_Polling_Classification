@@ -9,7 +9,7 @@ import urllib.request
 
 def scrape_census():
     resp = urllib.request.urlopen("https://www.census.gov/data/datasets/time-series/demo/popest/intercensal-2000-2010-counties.html")
-    soup = BeautifulSoup(resp, from_encoding=resp.info().get_param('charset'), features="lxml")
+    soup = BeautifulSoup(resp, from_encoding=resp.info().get_param('charset'), features='html.parser')
 
     states = soup.find(class_="statelist section")
     dataset_list = []
@@ -56,6 +56,8 @@ def fips_state(state):
     else:
         
         return str(state)
+    
+
     
 
 

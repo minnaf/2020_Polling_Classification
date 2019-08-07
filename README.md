@@ -21,29 +21,45 @@ Whereas Census Data was gathered from https://www.census.gov/data/tables/time-se
 Because Census Data from 2000 - 2010 was stored in various CSVs online, I used BeautifulSoup to webscrape. 
 
 2. Cleaning Data:
-The cleaning process involved standardizing information between the data and combining the Census Datasets. Additionally, I had to  manipulate the Census Data County Code and State Code to create a complete FIPS code, which aligned with the FIPS codes provided in the election data. Below you will find the codes used for the 'YEAR' column, which were adjusted to match original Census Data and altered throughout the cleaning process. 
-                    Year codes: 
-                    (1) - 2000
-                    (2) - 2001
-                    (3) - 2002
-                    (4) - 2003
-                    (5) - 2004
-                    (6) - 2005
-                    (7) - 2006
-                    (8) - 2007
-                    (9) - 2008
-                    (10) - 2009
-                    (11) - 2010
-                    (12) - 2011
-                    (13) - 2012
-                    (14) - 2013
-                    (15) - 2014
-                    (16) - 2015
-                    (17) - 2016
-                    (18) - 2017
-                    (19) - 2018
-                    
-3. Exploratory Data Analysis (EDA):                     
+The cleaning process involved standardizing information and format between the data and combining the Census Datasets. Specifically, I had to  manipulate the Census Data County Code and State Code to create a complete FIPS code, which aligned with the FIPS codes provided in the election data. Below you will find the codes used for the 'YEAR' column, which were adjusted to match original Census Data and altered throughout the cleaning process. Additionally, I combined age groups within the census data, classifying anyone between 18 - 30 as 'young' and 30+ as 'old'. I used these metrics because the average age of millennial today is around 30 and not because I think anyone above 30 is 'old'. I also removed many of the years in the census data to line up with the date information provided in the election data, but preserved the data by looking at demographic information as percentages rather than numerical values. 
+
+Year codes: 
+
+(1) - 2000
+(2) - 2001
+(3) - 2002
+(4) - 2003
+(5) - 2004
+(6) - 2005
+(7) - 2006
+(8) - 2007
+(9) - 2008
+(10) - 2009
+(11) - 2010
+(12) - 2011
+(13) - 2012
+(14) - 2013
+(15) - 2014
+(16) - 2015
+(17) - 2016
+(18) - 2017
+(19) - 2018
+
+3. Exploratory Data Analysis (EDA):   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     
                     
                     
