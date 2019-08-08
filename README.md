@@ -1,5 +1,7 @@
 # 2020_Polling_Classification
 
+By: Minna Fingerhood, Summer 2019 
+
 
 This project seeks to classify how every county in the US will vote in the presidential election based on political party using polling data from 2000 - 2016 and census data from 2000 - 2018. 
 
@@ -10,7 +12,7 @@ Outline:
     2. Clean Data 
     3. Exploratory Data Analysis (EDA) 
     4. Generate Models 
-    5. Visualization
+    
 
 ---------------------------------------
 
@@ -21,8 +23,15 @@ Whereas Census Data was gathered from https://www.census.gov/data/tables/time-se
 Because Census Data from 2000 - 2010 was stored in various CSVs online, I used BeautifulSoup to webscrape. 
 
 2. Cleaning Data:
-The cleaning process involved standardizing information and format between the data and combining the Census Datasets. Specifically, I had to  manipulate the Census Data County Code and State Code to create a complete FIPS code, which aligned with the FIPS codes provided in the election data. Below you will find the codes used for the 'YEAR' column, which were adjusted to match original Census Data and altered throughout the cleaning process. Additionally, I combined age groups within the census data, classifying anyone between 18 - 30 as 'young' and 30+ as 'old'. I used these metrics because the average age of millennial today is around 30 and not because I think anyone above 30 is 'old'. I also removed many of the years in the census data to line up with the date information provided in the election data, but preserved the data by looking at demographic information as percentages rather than numerical values. 
+The cleaning process involved standardizing information and format between the data and combining the Census Datasets. Specifically, I had to  manipulate the Census Data County Code and State Code to create a complete FIPS code, which aligned with the FIPS codes provided in the election data. 
 
+Below you will find the codes used for the 'YEAR' column, which were adjusted to match original Census Data and altered throughout the cleaning process. 
+
+I combined age groups within the census data, classifying anyone between 18 - 30 as 'young' and 30+ as 'old'. I used these metrics because the average age of millennial today is around 30 and not because I think anyone above 30 is 'old'. 
+
+I also removed many of the years in the census data to line up with the date information provided in the election data, but preserved the data by looking at demographic information as percentages rather than numerical values. 
+
+Lastly, I had to remove two FIPS codes, 51515 & 46113 which correspond to Bedford City, Virginia and Shannon County, South Dakota respectively, because they were merged with neighboring counties between the years 2000 and 2016.  
 Year codes: 
 
 (1) - 2000
@@ -47,7 +56,12 @@ Year codes:
 
 3. Exploratory Data Analysis (EDA):   
 
+In order to better understand my data I first performed a histogram to see how the target data (winner) was distributed. I also created a choropleth using plotly, to visualize results by county for all 5 elections. Lastly, I used PCA to visualize which features had the highest impact on my target. 
 
+
+4. Modeling: 
+
+To model my data, I used KNN, gradient boost, and XGBoost. 
 
 
 

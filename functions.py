@@ -4,6 +4,13 @@ import numpy as np
 from bs4 import BeautifulSoup, SoupStrainer
 import requests
 import urllib.request
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import precision_score, recall_score, accuracy_score, f1_score, confusion_matrix, classification_report
+from sklearn.model_selection import GridSearchCV
+import xgboost as xgb
+from sklearn.ensemble import GradientBoostingClassifier
 
 
 
@@ -59,12 +66,12 @@ def fips_state(state):
     
 
     
-
-
-
-
-
-
+def display_acc_and_f1_score(true, preds, model_name):
+    acc = accuracy_score(true, preds)
+    f1 = f1_score(true, preds)
+    print("Model: {}".format(model_name))
+    print("Accuracy: {}".format(acc))
+    print("F1-Score: {}".format(f1))
 
 
 
