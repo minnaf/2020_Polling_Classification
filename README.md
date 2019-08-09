@@ -12,6 +12,7 @@ Outline:
     2. Clean Data 
     3. Exploratory Data Analysis (EDA) 
     4. Generate Models 
+    5. Predict 2020 
     
 
 ---------------------------------------
@@ -29,7 +30,7 @@ Below you will find the codes used for the 'YEAR' column, which were adjusted to
 
 I combined age groups within the census data, classifying anyone between 18 - 30 as 'young' and 30+ as 'old'. I used these metrics because the average age of millennial today is around 30 and not because I think anyone above 30 is 'old'. 
 
-I also removed many of the years in the census data to line up with the date information provided in the election data, but preserved the data by looking at demographic information as percentages rather than numerical values. 
+I also removed many of the years in the census data to line up with the date information provided in the election data (so every 4th year), but preserved the data by looking at demographic information as percentages rather than numerical values. 
 
 Lastly, I had to remove two FIPS codes, 51515 & 46113 which correspond to Bedford City, Virginia and Shannon County, South Dakota respectively, because they were merged with neighboring counties between the years 2000 and 2016.  
 Year codes: 
@@ -58,10 +59,17 @@ Year codes:
 
 In order to better understand my data I first performed a histogram to see how the target data (winner) was distributed. I also created a choropleth using plotly, to visualize results by county for all 5 elections. Lastly, I used PCA to visualize which features had the highest impact on my target. 
 
-
 4. Modeling: 
 
-To model my data, I used KNN, gradient boost, and XGBoost. 
+To model my data, I used KNN, gradient boost, and XGBoost. I started with KNN because it was the more basic, then used gradient boost because it is in ensemble method and therefore increased accuracy. My final model was XGBoost because it is an optimized modeling method, similar to gradient boost. 
+
+
+5. Prediction for 2020:
+Using the most accurate model, I predicted the results for 2020 and graphed them on a choropleth. 
+
+**Future Thoughts / Ways to Improve:**
+
+To expand on my project, I would like to include features such as if the party nominee is an incumbant (and their approval ratings), average income, education level, and results from midterm and local elections to get more informed results. 
 
 
 
