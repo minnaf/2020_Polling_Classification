@@ -3,7 +3,7 @@
 By: Minna Fingerhood, Summer 2019 
 
 
-This project seeks to classify how every county in the US will vote in the presidential election based on political party using polling data from 2000 - 2016 and census data from 2000 - 2018. 
+This project seeks to classify how every county in the US will vote in the presidential election based on political party using polling data from 2000 - 2016 and census data (age,sex,race) from 2000 - 2018. 
 
 -------------------------------------
 
@@ -14,7 +14,6 @@ Outline:
     4. Generate Models 
     5. Predict 2020 
     
-
 ---------------------------------------
 
 
@@ -61,11 +60,12 @@ In order to better understand my data I first performed a histogram to see how t
 
 4. Modeling: 
 
-To model my data, I used KNN, gradient boost, and XGBoost. I started with KNN because it was the more basic, then used gradient boost because it is in ensemble method and therefore increased accuracy. My final model was XGBoost because it is an optimized modeling method, similar to gradient boost. 
+To model my data, I used KNN, gradient boost, and XGBoost. I started with KNN because I figured counties that had similar demographics would likely have similar voting outcomes. I then used gradient boost because it is in ensemble method and therefore increased accuracy and each model learns from the previous (as opposed to random forest). I thought this feature would be important because I wanted my model to learn from what it falsely labeled in its previous iteration. While this is important, it can also lead to overfitting and therefore high variance, which is something I need to consider. However, I think overfitting might be more reliable than bias, especially as my data builds off previous years and previous data points. My final model was XGBoost because it is an optimized modeling method, similar to gradient boost. 
 
 
 5. Prediction for 2020:
-Using the most accurate model, I predicted the results for 2020 and graphed them on a choropleth. 
+Using the most accurate model, XGBoost with 86% accuracy, I predicted the results for 2020 and graphed them on a choropleth. 
+
 
 **Future Thoughts / Ways to Improve:**
 
